@@ -1,0 +1,14 @@
+{
+  "name": "api-project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+  },
+  "author": "Jesus Rodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "normalize.css": "^8.0.1",
+    "parcel": "^2.10.3"
+  }
+}

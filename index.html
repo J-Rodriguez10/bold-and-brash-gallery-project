@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bold & Brash Gallery</title>
+
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="./src/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="./src/css/node_modules/@fortawesome/fontawesome-free/css/all.css"
+    />
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="./src/css/styles.css" />
+    <!-- javascript -->
+    <script type="module" defer src="./src/js/controller.js"></script>
+  </head>
+
+  <body>
+    <!-- nav toggle menu -->
+    <section class="nav-toggle-menu-cont align-center">
+      <div class="nav-toggle-menu">
+        <div class="menu-header">
+          <p>Menu</p>
+          <i class="fa-solid fa-x x-icon"></i>
+        </div>
+        <div class="bookmarks-cont">
+          <h5>Bookmarked</h5>
+          <!-- bookmark container -->
+          <div class="bookmarked-search-results"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- header -->
+    <header class="header">
+      <!-- navigation -->
+      <nav class="navbar">
+        <!-- toggle bars -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          class="toggle-bars"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75Zm0 10.5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75ZM2 10a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 2 10Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        <!-- B&B logo -->
+        <img class="logo" src="./src/img/B&B logo 3.png" />
+      </nav>
+      <!-- hero -->
+      <div class="hero align-center">
+        <div class="hero-info">
+          <p class="hero-p-1">Find aesthetic pleasure</p>
+          <h1>Bold & Brash Gallery</h1>
+          <p class="hero-p-2">
+            Discover a world of art at Bold & Brash Gallery, boasting the
+            largest global collection of Creative Commons Art. Explore diverse
+            genres and easily search for your favorites, putting the power of
+            discovery in your hands.
+          </p>
+          <button class="btn btn-clear"><span>BEGIN SEARCH</span></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- search -->
+    <section class="search-section">
+      <!-- <a href=" #545971">CLICKHERE111</a>
+      <a href="#203392">CLICKHERE222</a> -->
+      <div class="align-center">
+        <!-- search section info -->
+        <div class="search-section-input">
+          <!-- search bar -->
+          <form class="search-bar-cont" action="/search" method="get">
+            <input class="search-topic" type="text" name="q" placeholder="Enter a theme..." />
+            <!-- search button icon -->
+            <button>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- search results container -->
+        <div class="search-results-cont">
+          <div class="search-result-queue">
+            <!-- search result -->
+            <a class="search-result search-result-active" href="#326623">
+              <!-- search result preview img -->
+              <div class="search-result-preview-img">
+                <img
+                  src="https://images.metmuseum.org/CRDImages/an/web-large/DT905.jpg"
+                />
+              </div>
+              <!-- search result preview info -->
+              <div class="search-result-preview-info">
+                <p class="preview-title">
+                  Rhyton terminating in the forepart of a wild cat
+                </p>
+                <p class="preview-author"></p>
+              </div>
+            </a>
+            <!-- search result -->
+            <a class="search-result" href="#326623">
+              <!-- search result preview img -->
+              <div class="search-result-preview-img">
+                <img
+                  src="https://images.metmuseum.org/CRDImages/an/web-large/DT905.jpg"
+                />
+              </div>
+              <!-- search result preview info -->
+              <div class="search-result-preview-info">
+                <p class="preview-title">
+                  Rhyton terminating in the forepart of a wild cat
+                </p>
+                <p class="preview-author"></p>
+              </div>
+            </a>
+            <!-- search result -->
+            <a class="search-result" href="#326623">
+              <!-- search result preview img -->
+              <div class="search-result-preview-img">
+                <img
+                  src="https://images.metmuseum.org/CRDImages/an/web-large/DT905.jpg"
+                />
+              </div>
+              <!-- search result preview info -->
+              <div class="search-result-preview-info">
+                <p class="preview-title">
+                  Rhyton terminating in the forepart of a wild cat
+                </p>
+                <p class="preview-author"></p>
+              </div>
+            </a>
+            <!-- search result -->
+            <a class="search-result" href="#326623">
+              <!-- search result preview img -->
+              <div class="search-result-preview-img">
+                <img
+                  src="https://images.metmuseum.org/CRDImages/an/web-large/DT905.jpg"
+                />
+              </div>
+              <!-- search result preview info -->
+              <div class="search-result-preview-info">
+                <p class="preview-title">
+                  Rhyton terminating in the forepart of a wild cat
+                </p>
+                <p class="preview-author"></p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- end of search results container -->
+
+        <!-- left/right arrows -->
+        <div class="pagination"></div>
+      </div>
+    </section>
+
+    <!-- <div class="scroll"></div> -->
+  </body>
+</html>
