@@ -1,5 +1,5 @@
 import View from "./View.js";
-// VIEW ONLY DEALS WITH DOM MANIPULATION
+
 
 class ImgResultView extends View {
   _parentEl = document.querySelector(".search-results-cont");

@@ -870,23 +870,14 @@ Error Message
   object-fit: contain;
 }
 
-
-/* 
-
-
-to do next time
--- figure out the search results
-
-- then you can work on javascript
+/*  
+==========================
+Full Screen Image Display
+==========================
 */
 
-/* TO DO LIST: 
-
-Find python course */
-
-/* TO DO:
-- fix img
+.full-screen-image-display {
+  display:none;
+}
 
 
-
-*/

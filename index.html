@@ -18,12 +18,14 @@
     />
     <!-- css stylesheet -->
     <link rel="stylesheet" href="./src/css/styles.css" />
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="./src/css/styles-full-screen.css" />
     <!-- javascript -->
     <script type="module" defer src="./src/js/controller.js"></script>
   </head>
 
   <body>
-    <!-- nav toggle menu -->
+    <!-- nav toggle menu (bookmarks) -->
     <section class="nav-toggle-menu-cont align-center">
       <div class="nav-toggle-menu">
         <div class="menu-header">
@@ -76,7 +78,7 @@
       </div>
     </header>
 
-    <!-- search -->
+    <!-- search section -->
     <section class="search-section">
       <!-- <a href=" #545971">CLICKHERE111</a>
       <a href="#203392">CLICKHERE222</a> -->
@@ -85,12 +87,19 @@
         <div class="search-section-input">
           <!-- search bar -->
           <form class="search-bar-cont" action="/search" method="get">
-            <input class="search-topic" type="text" name="q" placeholder="Enter a theme..." />
+            <input
+              class="search-topic"
+              type="text"
+              name="q"
+              placeholder="Enter a theme..."
+            />
             <!-- search button icon -->
             <button>
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
+          
+
         </div>
 
         <!-- search results container -->
@@ -168,6 +177,11 @@
         <div class="pagination"></div>
       </div>
     </section>
+
+    <!-- full-screen-image-display -->
+    <div class="full-screen-image-display">
+      <p>Hello Is it working</p>
+    </div>
 
     <!-- <div class="scroll"></div> -->
   </body>

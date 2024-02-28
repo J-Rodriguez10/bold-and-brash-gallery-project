@@ -1,0 +1,38 @@
+@media only screen and (min-width: 750px) {
+  body {
+    display: flex;
+  }
+  /* Header/Hero ------ */
+  .header {
+    display: none;
+  }
+
+  /* Image Search Section ------*/
+  .search-section {
+    border: 3px solid brown;
+    width: 60%;
+    overflow: hidden;
+    max-width: 400px;
+  }
+
+  .search-section .align-center {
+    width: 100%;
+    margin: 0;
+    /* max-width: 1200px; */
+    border: 10px solid black;
+  }
+  
+
+
+
+
+
+  /* Full Screen Image Display------ */
+  .full-screen-image-display {
+    display: revert;
+    border: 2px solid red;
+    min-height: 100%;
+    width: 100%;
+    background-color: gray;
+  }
+}
