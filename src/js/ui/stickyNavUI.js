@@ -20,8 +20,6 @@ class StickyNavUI {
   }
 
   activateStickyNav() {
-    console.log("im observing");
-
     const headerObserver = new IntersectionObserver(
       this._observerCallback.bind(this),
       {
@@ -30,7 +28,6 @@ class StickyNavUI {
         rootMargin: `-${this.navHeight}px`,
       }
     );
-
     headerObserver.observe(this.header);
   }
 }

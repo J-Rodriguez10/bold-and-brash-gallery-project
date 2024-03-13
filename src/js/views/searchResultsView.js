@@ -4,7 +4,7 @@ class SearchResultsView extends View {
   _parentEl;
 
   _errMessage =
-    "Sorry, we couldn't find any results for your search. Try refining your query or exploring related terms.";
+    "Sorry, we couldn't find any results for your search. Try refining your query or exploring related terms!";
 
   _message = "";
 
@@ -38,11 +38,15 @@ class SearchResultsView extends View {
       </a>
     `;
   }
-  // each child view must have a _generateMarkup()
+
   _generateMarkup() {
     return this._data.map(this._generateMarkupSearchResult).join("");
   }
 
+  /**
+   * Inserts the search result queue container into the parent element and returns it for styling purposes.
+   * @returns {HTMLElement} The search result queue container element.
+   */
   _insertSearchResultQueueCont() {
     const queueContMarkup = `
       <!-- search result queue -->
@@ -55,14 +59,15 @@ class SearchResultsView extends View {
     return this._parentEl.querySelector(".search-result-queue");
   }
 
-  //~ OVERRIDNG parent View class render()
+  //~ OVERRIDNG from parent View class's render()
   render(data) {
     // recieving data to render
     this._data = data;
 
-    console.log("THIS IS THE RECIEVING DATA", this._data);
+    console.log("THIS IS IMPORTANT INFORMATION HERE:", this._data);
     // checking to see if we have data to  use
-    if (!data || (Array.isArray(data) && data.length === 0)) {
+    if(!Array.isArray(data)) return;
+    if (Array.isArray(data) && data.length === 0) {
       console.log("There is nothing in the array");
       return this.renderError();
     }
@@ -73,11 +78,6 @@ class SearchResultsView extends View {
     // inserting the search queue container
     this._contEl = this._insertSearchResultQueueCont();
 
-    // populating search queue continer w/ search results
-
-    // ^ checking to see if queue cont is inside
-    console.log("queue container is inside", this._contEl);
-
     // generating markup
     const markup = this._generateMarkup();
 
@@ -85,8 +85,6 @@ class SearchResultsView extends View {
 
     // populating the container el, with the markup
     this._contEl.insertAdjacentHTML("beforeend", markup);
-
-    console.log("HERE IS THE FINAL HTML PARENT ELEMENT:", this._contEl);
   }
 }
 

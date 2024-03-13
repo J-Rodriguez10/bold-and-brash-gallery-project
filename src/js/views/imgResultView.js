@@ -7,7 +7,7 @@ class ImgResultView extends View {
     super();
     this._parentEl = document.querySelector(parentElClass);
   }
-  // data will contain state.imgInfo from model.js whenever render() is used
+
   _errMessage =
     "Sorry, we couldn't find any results for your search. Try refining your query or exploring related terms.";
 
@@ -16,6 +16,7 @@ class ImgResultView extends View {
       addEventListener("click", function (e) {
         const bookmarkBtnClicked = e.target.closest(".bookmark-btn");
 
+        // garud clause
         if (!bookmarkBtnClicked) return;
 
         handler();
@@ -72,6 +73,10 @@ class ImgResultView extends View {
   `;
   }
 
+  /**
+   * Generates markup of type "FULL" for displaying search results in the full screen menu.
+   * @returns {string} The generated markup.
+   */
   _generateMarkupFull() {
     return `
       <div class="search-result-img-cont">
@@ -127,11 +132,5 @@ class ImgResultView extends View {
 }
 
 export default ImgResultView;
-
-/*
-1) CHANGE RENDER FUNCTION - INCLUDE TYPE
-2) ADD A SECOND GENERATE MARKUP FUNCTION 
-3) CHANGE THE CONTROLLER'S RENDER MARKUP FOR THE IMG RESULT VIEW
-*/
 
 

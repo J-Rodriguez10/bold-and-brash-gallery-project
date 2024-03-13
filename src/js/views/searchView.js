@@ -16,17 +16,14 @@ class SearchView {
 
   getSearchTopic() {
     const topicInput = this._parentEl.querySelector("input[type='text']");
+
     const topic = topicInput ? topicInput.value : "";
 
-    console.log("This is the topic:", topic);
-
     this._clearInput();
-
     return topic;
   }
 
   _clearInput() {
-    // const topicInput = this._parentEl.querySelector("input[type='text']");
     this._parentEl.querySelector("input[type='text']").value = "";
   }
 

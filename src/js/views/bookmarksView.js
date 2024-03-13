@@ -1,8 +1,6 @@
 import View from "./View.js";
 
 class BookmarksView extends View {
-  // _parentEl = document.querySelector(".bookmarked-search-results");
-
   _parentEl;
 
   _isRevealed;
@@ -63,21 +61,18 @@ class BookmarksView extends View {
 
   // ~ OVERRIDING FROM VIEWS CLASS
   update(data, markupType = null) {
-    console.log("IM ABOUT TO ENTER");
+    // gaurd clause
     if (!this._isRevealed) return;
-    console.log("I ENTERED !!!!!");
 
     this._data = data;
 
-    console.log("INSIDE VIEW UPDATE() - data ", this._data);
-
+    // generating markup based on markupType
     let newMarkup;
     if (markupType && markupType.trim().toUpperCase() === "FULL") {
       newMarkup = this._generateMarkupFull();
     } else {
       newMarkup = this._generateMarkup();
     }
-
     // converts string to DOM html element
     const newDOM = document.createRange().createContextualFragment(newMarkup);
 
@@ -141,133 +136,9 @@ class BookmarksView extends View {
     `;
   }
 
-  // each child view must have a _generateMarkup()
   _generateMarkup() {
     return this._data.map(this._generateMarkupSearchResult).join("");
   }
 }
 
 export default BookmarksView;
-
-//  <!-- search result -->
-//           <div class="search-result">
-//             <!-- search result preview img -->
-//             <div class="search-result-preview-img">
-//               <img src="./src/img/search-section-img.jpg" alt="" />
-//             </div>
-//             <!-- search result preview info -->
-//             <div class="search-result-preview-info">
-//               <p class="preview-title">
-//                 CAT STATUETTE INTENDED TO CONTAIN A MUMMIFIED CAT
-//               </p>
-//               <p class="preview-author">Unknown</p>
-//             </div>
-//           </div>
-//           <!-- search result -->
-//           <div class="search-result">
-//             <!-- search result preview img -->
-//             <div class="search-result-preview-img">
-//               <img src="./src/img/search-section-img.jpg" alt="" />
-//             </div>
-//             <!-- search result preview info -->
-//             <div class="search-result-preview-info">
-//               <p class="preview-title">CONTAIN A MUMMIFIED CAT</p>
-//               <p class="preview-author">Unknown</p>
-//             </div>
-//           </div>
-//           <!-- search result -->
-//           <div class="search-result">
-//             <!-- search result preview img -->
-//             <div class="search-result-preview-img">
-//               <img src="./src/img/search-section-img.jpg" alt="" />
-//             </div>
-//             <!-- search result preview info -->
-//             <div class="search-result-preview-info">
-//               <p class="preview-title">
-//                 CAT STATUETTE INTENDED TO CONTAIN A MUMMIFIED CAT
-//               </p>
-//               <p class="preview-author">Unknown</p>
-//             </div>
-//           </div>
-//           <!-- search result -->
-//           <div class="search-result">
-//             <!-- search result preview img -->
-//             <div class="search-result-preview-img">
-//               <img src="./src/img/search-section-img.jpg" alt="" />
-//             </div>
-//             <!-- search result preview info -->
-//             <div class="search-result-preview-info">
-//               <p class="preview-title">
-//                 CAT STATUETTE INTENDED TO CONTAIN A MUMMIFIED CAT
-//               </p>
-//               <p class="preview-author">Unknown</p>
-//             </div>
-//           </div>
-//           <!-- search result -->
-//           <div class="search-result">
-//             <!-- search result preview img -->
-//             <div class="search-result-preview-img">
-//               <img src="./src/img/search-section-img.jpg" alt="" />
-//             </div>
-//             <!-- search result preview info -->
-//             <div class="search-result-preview-info">
-//               <p class="preview-title">
-//                 CAT STATUETTE INTENDED TO CONTAIN A MUMMIFIED CAT
-//               </p>
-//               <p class="preview-author">Unknown</p>
-//             </div>
-//           </div>
-//           <!-- search result -->
-//           <div class="search-result">
-//             <!-- search result preview img -->
-//             <div class="search-result-preview-img">
-//               <img src="./src/img/search-section-img.jpg" alt="" />
-//             </div>
-//             <!-- search result preview info -->
-//             <div class="search-result-preview-info">
-//               <p class="preview-title">CONTAIN A MUMMIFIED CAT</p>
-//               <p class="preview-author">Unknown</p>
-//             </div>
-//           </div>
-//           <!-- search result -->
-//           <div class="search-result">
-//             <!-- search result preview img -->
-//             <div class="search-result-preview-img">
-//               <img src="./src/img/search-section-img.jpg" alt="" />
-//             </div>
-//             <!-- search result preview info -->
-//             <div class="search-result-preview-info">
-//               <p class="preview-title">
-//                 CAT STATUETTE INTENDED TO CONTAIN A MUMMIFIED CAT
-//               </p>
-//               <p class="preview-author">Unknown</p>
-//             </div>
-//           </div>
-//           <!-- search result -->
-//           <div class="search-result">
-//             <!-- search result preview img -->
-//             <div class="search-result-preview-img">
-//               <img src="./src/img/search-section-img.jpg" alt="" />
-//             </div>
-//             <!-- search result preview info -->
-//             <div class="search-result-preview-info">
-//               <p class="preview-title">
-//                 CAT STATUETTE INTENDED TO CONTAIN A MUMMIFIED CAT
-//               </p>
-//               <p class="preview-author">Unknown</p>
-//             </div>
-//           </div>
-//           <!-- search result -->
-//           <div class="search-result">
-//             <!-- search result preview img -->
-//             <div class="search-result-preview-img">
-//               <img src="./src/img/search-section-img.jpg" alt="" />
-//             </div>
-//             <!-- search result preview info -->
-//             <div class="search-result-preview-info">
-//               <p class="preview-title">
-//                 CAT STATUETTE INTENDED TO CONTAIN A MUMMIFIED CAT
-//               </p>
-//               <p class="preview-author">Unknown</p>
-//             </div>
-//           </div>

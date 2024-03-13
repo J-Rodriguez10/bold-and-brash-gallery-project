@@ -391,7 +391,7 @@ Hero
 }
 
 .hero-info {
-  /* border: 1px solid red; */
+
 }
 
 .hero-p-1 {
@@ -417,7 +417,7 @@ Search Section
   height: auto;
   width: auto;
   background-color: rgb(226, 226, 226);
-  background-image: url(../img/tryThis.jpg);
+  background-image: url(../img/search-section-bg.jpg);
   background-size: cover;
   background-position: center;
   z-index: 0;

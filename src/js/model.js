@@ -49,13 +49,6 @@ export const updateSearchResults = function (newSearchRes) {
   state.search.results = newSearchRes;
 };
 
-const _clearStateSearchResults = function () {
-  state.search.results = [];
-};
-
-const _resetStatePage = function () {
-  state.search.page = 0;
-};
 
 export const loadIdObj = async function (searchTopic) {
   try {
@@ -117,7 +110,6 @@ export const loadImgObj = async function (imgId) {
   }
 };
 
-// ^FIX THIS ================================================
 export const updateImgObj = function (imgObj) {
   state.imgObj = {
     medium: imgObj.medium,
@@ -159,7 +151,6 @@ const _returnFilteredImgObj = function (imgObj) {
 
   return filteredInfo;
 };
-// ^FIX THIS ==============================================
 
 export const loadNextSearchRes = async function (idObj, currPage) {
   let currI = state.search.indexArr[currPage - 1];
@@ -241,6 +232,7 @@ export const getSearchResultsPage = async function (searchTopic, page) {
     console.log("OOPSIES");
   }
 };
+
 
 const persistBookmarks= function () {
   localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));

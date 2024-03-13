@@ -60,7 +60,7 @@
           />
         </svg>
         <!-- B&B logo -->
-        <img class="logo" src="./src/img/B&B logo 3.png" />
+        <img class="logo" src="./src/img/Bold&Brash-logo.png" />
       </nav>
       <!-- hero -->
       <div class="hero align-center">
@@ -73,15 +73,15 @@
             genres and easily search for your favorites, putting the power of
             discovery in your hands.
           </p>
-          <button class="btn btn-clear"><span>BEGIN SEARCH</span></button>
+          <button id="scroll-btn" class="btn btn-clear">
+            <span>BEGIN SEARCH</span>
+          </button>
         </div>
       </div>
     </header>
 
     <!-- search section -->
-    <section class="search-section">
-      <!-- <a href=" #545971">CLICKHERE111</a>
-      <a href="#203392">CLICKHERE222</a> -->
+    <section id="scroll-destination" class="search-section">
       <div class="align-center">
         <!-- search section info -->
         <div class="search-section-input">
@@ -116,20 +116,24 @@
         <header class="menu-heading">
           <!-- logo -->
           <div class="logo-img-cont">
-            <img class="menu-logo" src="./src/img/B&B-menu-logo.png" alt="" />
+            <img
+              class="menu-logo"
+              src="./src/img/Bold&Brash-full-screen-logo.png"
+              alt="Bold And Brash Logo"
+            />
           </div>
 
           <!-- bookmarks revealer btn -->
           <button title="reveal bookmarked images" id="bookmarks">
             <i class="fa-solid fa-bookmark bookmark-icon-style"></i>
           </button>
-          
+
           <!-- search bar -->
           <div class="menu-search-bar-cont">
             <form
-            id="form-menu-large"
-            class="search-bar-cont"
-            action="/search"
+              id="form-menu-large"
+              class="search-bar-cont"
+              action="/search"
               method="get"
             >
               <input
@@ -147,9 +151,7 @@
         </header>
 
         <!-- search results container -->
-        <div class="search-results-cont-full">
-          
-        </div>
+        <div class="search-results-cont-full"></div>
 
         <!-- left/right arrows -->
         <div class="pagination-full"></div>
@@ -158,15 +160,5 @@
       <!-- image displayer -->
       <section class="image-display"></section>
     </div>
-
-    <!-- For "check-full" -->
-    <!-- <input type="checkbox" id="check-full" />
-    <label for="check-full">
-      <div class="reveal-info-btn">
-      <i class="fa-solid fa-circle-info info-icon-style"></i>
-      </div>
-    </label> -->
-
-    <!-- <div class="scroll"></div> -->
   </body>
 </html>

@@ -1,4 +1,3 @@
-// module small enought to not heavily enforce full MVC architecture
 class buttonAnimationsUI {
   buttonsInUseArr = document.querySelectorAll(".btn-clear");
 

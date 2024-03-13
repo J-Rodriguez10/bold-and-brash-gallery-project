@@ -1,6 +1,8 @@
-// when extended, child class must have
-// 1) parentEl defined
-// 2) _generateMarkup() defined
+/**
+ * every child class that extends View needs to have:
+ * _parentEl
+ * _generateMarkup()
+ */
 
 export default class View {
   _data;
@@ -12,14 +14,17 @@ export default class View {
     this._clear();
   }
 
+  /**
+   * Renders the data onto the view.
+   * @param {any} data The data to render.
+   * @param {string} [markupType=null] The type of markup to generate (optional).
+   * @returns {void}
+   */
   render(data, markupType = null) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
     this._data = data;
-    // order matters, makes the info button work
-
-    console.log("INSIDE VIEW RENDER() - data ", this._data);
 
     // generating markup based on markupType
     let markup;
@@ -37,11 +42,14 @@ export default class View {
     this._parentEl.insertAdjacentHTML("beforeend", markup);
   }
 
-  // instead of rendering everything, update() only re renders specific parts that changed
+  /**
+   * Updates the view with new data, re-rendering specific parts that changed.
+   * @param {any} data The new data to update the view with.
+   * @param {string} [markupType=null] The type of markup to generate (optional).
+   * @returns {void}
+   */
   update(data, markupType = null) {
     this._data = data;
-
-    console.log("INSIDE VIEW UPDATE() - data ", this._data);
 
     let newMarkup;
     if (markupType && markupType.trim().toUpperCase() === "FULL") {
