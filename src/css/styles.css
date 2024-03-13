@@ -209,7 +209,7 @@ Button Styles
 Navbar
 ======================
 */
-header {
+.header {
   position: relative;
   height: 100vh;
   min-height: 500px;
@@ -222,7 +222,7 @@ header {
   align-items: center;
 }
 
-header::after {
+.header::after {
   position: absolute;
   display: block;
   content: "";
@@ -274,7 +274,6 @@ header::after {
   height: 100vh;
 }
 
-
 /*  
 ======================
 Nav toggle Menu
@@ -283,7 +282,7 @@ Nav toggle Menu
 .nav-toggle-menu-cont {
   position: fixed;
   z-index: 99;
-  border: 3px solid green;
+  /* border: 3px solid green; */
 }
 
 /* add backdrop class to .nav-toggle-menu-cont */
@@ -371,8 +370,6 @@ Nav toggle Menu
   padding-left: calc(1rem + 3px) !important;
   background: rgb(220, 218, 218);
 }
-
-
 
 /*  
 ======================
@@ -560,7 +557,6 @@ input::placeholder {
   transform: scale(1.2);
 }
 
-
 /*  
 =======================================
 Queue Search Results and Image Display
@@ -687,11 +683,15 @@ Queue Search Results and Image Display
   justify-content: center;
   opacity: 0.2;
   transition: var(--transition);
+  font-weight: 200;
   /* display: none; */
 }
 
+/* .image-display .bookmark-btn {
+  border: 3px solid red !important;
+} */
 .bookmark-btn:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .bookmark-icon-style {
@@ -702,6 +702,7 @@ Queue Search Results and Image Display
 .bookmark-icon-style-active {
   color: gold;
 }
+
 /* reveal info button */
 .reveal-info-btn {
   cursor: pointer;
@@ -737,7 +738,13 @@ Image Info Container
 ======================
 */
 
-.img-info-cont {
+#check,
+#check-full {
+  display: none;
+}
+
+.img-info-cont,
+.img-info-cont-full {
   position: absolute;
   padding: 0 1.5rem;
   top: 0;
@@ -750,23 +757,32 @@ Image Info Container
   font-size: 0.95rem;
   font-weight: 300;
   z-index: 0;
-  /* border: 3px solid red; */
 }
 
 .img-title {
   text-align: center;
 }
 
-input[type="checkbox"] {
+/* hide img-info-cont */
+.img-info-cont-full,
+.img-info-cont {
   display: none;
 }
-
-input[type="checkbox"] ~ .img-info-cont {
-  display: none;
+/* reveal img container when button in clicked */
+.search-results-cont input[type="checkbox"]:checked ~ .img-info-cont {
+  display: block;
 }
 
-input[type="checkbox"]:checked ~ .img-info-cont {
-  display: revert;
+/* full screen image container styles */
+#center-img-cont {
+  flex-direction: column;
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 1.5rem;
+}
+.image-display input[type="checkbox"]:checked ~ #center-img-cont {
+  display: flex;
 }
 
 /*  
@@ -820,7 +836,7 @@ Loading Screen
 }
 
 .screen-practice {
-  border: 5px solid green;
+  /* border: 5px solid green; */
   height: 400px;
 }
 
@@ -876,8 +892,27 @@ Full Screen Image Display
 ==========================
 */
 
-.full-screen-image-display {
-  display:none;
+.full-screen-menu {
+  display: none;
 }
 
 
+
+#practice {
+  border: 3px solid red;
+  min-height: 10px;
+  min-width: 10px;
+  background: orange;
+}
+
+#practice-2 {
+  display: none;
+  height: 25px;
+  width: 100%;
+  background: blue;
+}
+
+input[type="checkbox"]#myCheckbox:checked ~ #practice-2 {
+  display:block;
+
+}

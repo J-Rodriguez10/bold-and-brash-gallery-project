@@ -247,7 +247,11 @@ const persistBookmarks= function () {
 };
 
 export const addBookmark = function (imgObj) {
-  console.log("IM SUPPOSEDD TO ADD");
+  console.log("IM SUPPOSEDD TO ADD THIS IMG OBJ TO THE STATE BOOKMARKS", imgObj);
+
+  // gaurd clause
+  if(!imgObj) return;
+
   // add bookmark
   state.bookmarks.push(imgObj);
   // mark current imgObj as bookmarked

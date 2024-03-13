@@ -8,7 +8,11 @@ export default class View {
     this._parentEl.innerHTML = "";
   }
 
-  render(data) {
+  clearContainer() {
+    this._clear();
+  }
+
+  render(data, markupType = null) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
@@ -16,20 +20,35 @@ export default class View {
     // order matters, makes the info button work
 
     console.log("INSIDE VIEW RENDER() - data ", this._data);
-    const markup = this._generateMarkup();
-    console.log("INSIDE VIEW RENDER() - markup ", markup);
+
+    // generating markup based on markupType
+    let markup;
+
+    if (markupType && markupType.trim().toUpperCase() === "FULL") {
+      markup = this._generateMarkupFull();
+    } else {
+      markup = this._generateMarkup();
+    }
+
+    console.log("RENDER() - THE MARKUP GENERATED AND BEING RENDERED: ", markup);
 
     console.log("INSIDE VIEW RENDER() - parentEl", this._parentEl);
     this._clear();
     this._parentEl.insertAdjacentHTML("beforeend", markup);
   }
 
-  // instead of rendering everything, update() only re renders specefic parts that changed
-  update(data) {
+  // instead of rendering everything, update() only re renders specific parts that changed
+  update(data, markupType = null) {
     this._data = data;
 
     console.log("INSIDE VIEW UPDATE() - data ", this._data);
-    const newMarkup = this._generateMarkup();
+
+    let newMarkup;
+    if (markupType && markupType.trim().toUpperCase() === "FULL") {
+      newMarkup = this._generateMarkupFull();
+    } else {
+      newMarkup = this._generateMarkup();
+    }
 
     // converts string to DOM html element
     const newDOM = document.createRange().createContextualFragment(newMarkup);

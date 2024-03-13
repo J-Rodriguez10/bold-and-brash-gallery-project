@@ -98,90 +98,74 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
-          
-
         </div>
 
         <!-- search results container -->
-        <div class="search-results-cont">
-          <div class="search-result-queue">
-            <!-- search result -->
-            <a class="search-result search-result-active" href="#326623">
-              <!-- search result preview img -->
-              <div class="search-result-preview-img">
-                <img
-                  src="https://images.metmuseum.org/CRDImages/an/web-large/DT905.jpg"
-                />
-              </div>
-              <!-- search result preview info -->
-              <div class="search-result-preview-info">
-                <p class="preview-title">
-                  Rhyton terminating in the forepart of a wild cat
-                </p>
-                <p class="preview-author"></p>
-              </div>
-            </a>
-            <!-- search result -->
-            <a class="search-result" href="#326623">
-              <!-- search result preview img -->
-              <div class="search-result-preview-img">
-                <img
-                  src="https://images.metmuseum.org/CRDImages/an/web-large/DT905.jpg"
-                />
-              </div>
-              <!-- search result preview info -->
-              <div class="search-result-preview-info">
-                <p class="preview-title">
-                  Rhyton terminating in the forepart of a wild cat
-                </p>
-                <p class="preview-author"></p>
-              </div>
-            </a>
-            <!-- search result -->
-            <a class="search-result" href="#326623">
-              <!-- search result preview img -->
-              <div class="search-result-preview-img">
-                <img
-                  src="https://images.metmuseum.org/CRDImages/an/web-large/DT905.jpg"
-                />
-              </div>
-              <!-- search result preview info -->
-              <div class="search-result-preview-info">
-                <p class="preview-title">
-                  Rhyton terminating in the forepart of a wild cat
-                </p>
-                <p class="preview-author"></p>
-              </div>
-            </a>
-            <!-- search result -->
-            <a class="search-result" href="#326623">
-              <!-- search result preview img -->
-              <div class="search-result-preview-img">
-                <img
-                  src="https://images.metmuseum.org/CRDImages/an/web-large/DT905.jpg"
-                />
-              </div>
-              <!-- search result preview info -->
-              <div class="search-result-preview-info">
-                <p class="preview-title">
-                  Rhyton terminating in the forepart of a wild cat
-                </p>
-                <p class="preview-author"></p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- end of search results container -->
+        <div class="search-results-cont"></div>
 
         <!-- left/right arrows -->
         <div class="pagination"></div>
       </div>
     </section>
 
-    <!-- full-screen-image-display -->
-    <div class="full-screen-image-display">
-      <p>Hello Is it working</p>
+    <!-- full-screen-menu -->
+    <div class="full-screen-menu">
+      <!-- search sidebar -->
+      <aside class="search-sidebar">
+        <!-- menu header  -->
+        <header class="menu-heading">
+          <!-- logo -->
+          <div class="logo-img-cont">
+            <img class="menu-logo" src="./src/img/B&B-menu-logo.png" alt="" />
+          </div>
+
+          <!-- bookmarks revealer btn -->
+          <button title="reveal bookmarked images" id="bookmarks">
+            <i class="fa-solid fa-bookmark bookmark-icon-style"></i>
+          </button>
+          
+          <!-- search bar -->
+          <div class="menu-search-bar-cont">
+            <form
+            id="form-menu-large"
+            class="search-bar-cont"
+            action="/search"
+              method="get"
+            >
+              <input
+                class="search-input"
+                type="text"
+                name="q"
+                placeholder="Enter a theme..."
+              />
+              <!-- search button icon -->
+              <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </header>
+
+        <!-- search results container -->
+        <div class="search-results-cont-full">
+          
+        </div>
+
+        <!-- left/right arrows -->
+        <div class="pagination-full"></div>
+      </aside>
+
+      <!-- image displayer -->
+      <section class="image-display"></section>
     </div>
+
+    <!-- For "check-full" -->
+    <!-- <input type="checkbox" id="check-full" />
+    <label for="check-full">
+      <div class="reveal-info-btn">
+      <i class="fa-solid fa-circle-info info-icon-style"></i>
+      </div>
+    </label> -->
 
     <!-- <div class="scroll"></div> -->
   </body>

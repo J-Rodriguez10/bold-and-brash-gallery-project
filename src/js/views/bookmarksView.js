@@ -1,11 +1,118 @@
 import View from "./View.js";
 
 class BookmarksView extends View {
-  _parentEl = document.querySelector(".bookmarked-search-results");
+  // _parentEl = document.querySelector(".bookmarked-search-results");
+
+  _parentEl;
+
+  _isRevealed;
+
   _errMessage =
     "No bookmarks yet. Add your favorite art work to your bookmarked list";
 
   _message = "";
+
+  constructor(parentElClass, isRevealed = true) {
+    super();
+    this._parentEl = document.querySelector(parentElClass);
+    this._isRevealed = isRevealed;
+  }
+
+  getIsRevealed() {
+    return this._isRevealed;
+  }
+
+  toggleIsRevealed() {
+    this._isRevealed = !this._isRevealed;
+  }
+
+  hideBookmarks() {
+    this.clearContainer();
+    this._isRevealed = false;
+  }
+
+  // ~ OVERRIDING FROM VIEWS CLASS
+  render(data, markupType = null) {
+    if (!data || (Array.isArray(data) && data.length === 0))
+      return this.renderError();
+
+    // if isRevealed is false, we dont need to render anything
+
+    if (!this._isRevealed) return;
+
+    this._data = data;
+    // order matters, makes the info button work
+
+    console.log("INSIDE VIEW RENDER() - data ", this._data);
+
+    // generating markup based on markupType
+    let markup;
+
+    if (markupType && markupType.trim().toUpperCase() === "FULL") {
+      markup = this._generateMarkupFull();
+    } else {
+      markup = this._generateMarkup();
+    }
+
+    console.log("RENDER() - THE MARKUP GENERATED AND BEING RENDERED: ", markup);
+
+    console.log("INSIDE VIEW RENDER() - parentEl", this._parentEl);
+    this._clear();
+    this._parentEl.insertAdjacentHTML("beforeend", markup);
+  }
+
+  // ~ OVERRIDING FROM VIEWS CLASS
+  update(data, markupType = null) {
+    console.log("IM ABOUT TO ENTER");
+    if (!this._isRevealed) return;
+    console.log("I ENTERED !!!!!");
+
+    this._data = data;
+
+    console.log("INSIDE VIEW UPDATE() - data ", this._data);
+
+    let newMarkup;
+    if (markupType && markupType.trim().toUpperCase() === "FULL") {
+      newMarkup = this._generateMarkupFull();
+    } else {
+      newMarkup = this._generateMarkup();
+    }
+
+    // converts string to DOM html element
+    const newDOM = document.createRange().createContextualFragment(newMarkup);
+
+    // array of nodes - updated version
+    const newElements = Array.from(newDOM.querySelectorAll("*"));
+
+    // array of nodes - old version
+    const currElements = Array.from(this._parentEl.querySelectorAll("*"));
+
+    // Compare the updated and old version, to see what needs to be changed. The old version (currElements) gets mutated
+    newElements.forEach((newEl, i) => {
+      // Get the corresponding element from the current DOM
+      const curEl = currElements[i];
+
+      // Log whether the current and new elements are equal
+      // console.log("Comparing elements:", curEl, newEl.isEqualNode(curEl));
+
+      // Check if nodes are different AND if the new node contains non-empty text
+      if (
+        !newEl.isEqualNode(curEl) &&
+        newEl.firstChild?.nodeValue.trim() !== ""
+      ) {
+        // Update the text content of the current element with the new element's text content
+        curEl.textContent = newEl.textContent;
+      }
+
+      // Update changed attributes
+      if (!newEl.isEqualNode(curEl)) {
+        // Loop through the attributes of the new element and set them on the current element
+        Array.from(newEl.attributes).forEach((attr) =>
+          curEl.setAttribute(attr.name, attr.value)
+        );
+      }
+    });
+  }
 
   addHandlerRender(handler) {
     window.addEventListener("load", handler);
@@ -38,11 +145,9 @@ class BookmarksView extends View {
   _generateMarkup() {
     return this._data.map(this._generateMarkupSearchResult).join("");
   }
-
-
 }
 
-export default new BookmarksView();
+export default BookmarksView;
 
 //  <!-- search result -->
 //           <div class="search-result">

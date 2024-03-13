@@ -1,38 +1,305 @@
 @media only screen and (min-width: 750px) {
-  body {
-    display: flex;
-  }
-  /* Header/Hero ------ */
   .header {
     display: none;
   }
 
-  /* Image Search Section ------*/
   .search-section {
-    border: 3px solid brown;
-    width: 60%;
-    overflow: hidden;
-    max-width: 400px;
+    display: none;
   }
 
-  .search-section .align-center {
-    width: 100%;
-    margin: 0;
-    /* max-width: 1200px; */
-    border: 10px solid black;
+  /* full screen menu */
+  .full-screen-menu {
+    display: flex;
+    border: 1px solid black;
+    height: 100vh;
   }
+
+  /* search side bar */
+  .full-screen-menu .search-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    max-width: 400px;
+    flex: 1;
+    color: green;
+    overflow: hidden;
+    /* border: 3px solid orange; */
+    background: black;
+  }
+
+  /* logo */
+  .logo-img-cont {
+    min-height: 100px;
+    max-height: 100px;
+    min-width: 120px;
+    max-width: 120px;
+    margin-top: 1rem;
+    margin-left: 3rem;
+  }
+  .menu-logo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .search-sidebar {
+    position: relative;
+    /* border: 3px solid pink; */
+    overflow: scroll !important;
+    min-height: 100vh !important;
+  }
+
+  /* bookmarks revealer btn */
+  #bookmarks {
+    position: absolute;
+    /* border: 2px solid red; */
+    width: 2.5rem;
+    height: 4rem;
+    right: 10%;
+    top: 2rem;
+    cursor: pointer;
+  }
+  #bookmarks:hover {
+    transform: scale(1.05);
+  }
+
+  #bookmarks .bookmark-icon-style {
+    font-size: 2.5rem;
+  }
+
+  /* search bar */
+  .menu-search-bar-cont {
+    padding: 0 1rem;
+  }
+
+  .full-screen-menu .search-bar-cont {
+    height: auto;
+    width: 100%;
+  }
+  .full-screen-menu .search-input {
+    border-radius: 0;
+    background: transparent;
+    height: 40px;
+    border-bottom: 1px solid white;
+    color: white;
+  }
+  .full-screen-menu button {
+    border-radius: 0;
+    background: transparent;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-bottom: 1px solid white;
+  }
+
+  /* search results container */
+
+  .full-screen-menu .search-results-cont-full {
+    /* border: 1px solid blue; */
+    width: 100%;
+    min-height: 60vh;
+    max-height: 60vh;
+    overflow: scroll;
+    /* border-bottom: 1px solid white; */
+  }
+
+  .full-screen-menu .search-result:hover,
+  .full-screen-menu .search-result-active {
+    transform: translateY(0);
+    /* padding-left: calc(1rem + 3px) !important;  */
+  }
+
+  /* pagination arrows */
+  .full-screen-menu .pagination-full {
+    display: block;
+    /* justify-content: space-between; ! */
+    width: 100%;
+    margin-top: 2vh;
+    /* border: 3px solid blue; */
+  }
+  .pagination-full button {
+    /* background: transparent; */
+    border-color: transparent !important;
+    cursor: pointer;
+
+    /* transition: var(--transition); */
+  }
+  .arrow {
+    color: white;
+    border: 1px solid white !important;
+    /* width: 10px; ! */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    column-gap: 5px;
+    font-family: var(--body-font);
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: var(--transition);
+  }
+
+  /* left arrow */
+  .pagination-full .left-arr p {
+    font-size: 0.86rem;
+  }
+  .pagination-full .left-arr svg {
+    /* border: 1px solid red; */
+    font-size: 1.3rem;
+  }
+
+  /* right arrow */
+  .pagination-full .right-arr p {
+    font-size: 1rem;
+  }
+  .pagination-full .right-arr svg {
+    /* border: 1px solid red; */
+    font-size: 2.5rem;
+  }
+  .pagination-full .arrow:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s linear;
+    background: transparent;
+  }
+  .left-arr {
+    margin-right: auto;
+  }
+  .right-arr {
+    margin-left: auto;
+  }
+
+  /* image display */
+  .full-screen-menu .image-display {
+    /* border: 3px solid pink; */
+    min-height: 100.3%;
+    flex: 2;
+    overflow: hidden;
+    /* height: 100px solid blue !important; */
+    /* border: 3px solid orange; */
+  }
+
+  .image-display {
+    position: relative;
+    min-height: 100%;
+    flex: 2;
+    overflow: hidden;
+    background: url(../img/hero-2.jpg) center/cover;
+    z-index: 1;
+  }
+
+  .image-display::after {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: -1;
+  }
+
+  .full-screen-menu .search-result-img-cont {
+    height: 100%;
+  }
+
+  .full-screen-menu .search-result-img {
+    height: 100%;
+  }
+
+  .full-screen-menu .img-info-cont {
+    border: 4px solid green;
+    text-align: center;
+    width: 100%;
+    padding-top: 1rem;
+  }
+  #center-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  /* BUTTONS */
+
+  /* bookmarks container */
   
 
+  /* bookmark button */
+  .image-display .bookmark-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border-radius: 20%;
+    border: 1px solid white;
+    background: transparent;
+    max-height: 2rem;
+    min-width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.2;
+    transition: var(--transition);
+  }
 
+  /* reveal info button */
+  .image-display .reveal-info-btn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: transparent;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.2;
+    transition: var(--transition);
+    z-index: 1;
+    max-height: 2rem;
+    min-width: 2rem;
+  }
 
+  #full-screen-btn {
+    width: auto;
+    color: white;
+    gap: 10px;
+    padding: 0 8px;
+    height: 40px;
+    border-radius: 10px;
+  }
 
+  #full-screen-btn p {
+    display: none;
+  }
 
-  /* Full Screen Image Display------ */
-  .full-screen-image-display {
-    display: revert;
-    border: 2px solid red;
-    min-height: 100%;
-    width: 100%;
-    background-color: gray;
+  .reveal-info-btn:hover {
+    opacity: 1;
+  }
+
+  .info-icon-style {
+    color: white;
+    font-size: 1.3rem;
   }
 }
+
+/* information button and bookmark button style */
+@media only screen and (min-width: 935px) {
+  #full-screen-btn p {
+    display: revert;
+  }
+}
+
+/*
+4. background image -js 
+5. CONNECT SEARCH VIEW WITH OTHER PARTS
+
+*/

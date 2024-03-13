@@ -1,13 +1,19 @@
 import View from "./View.js";
 
 class SearchResultsView extends View {
-  _parentEl = document.querySelector(".search-results-cont");
+  _parentEl;
+
   _errMessage =
     "Sorry, we couldn't find any results for your search. Try refining your query or exploring related terms.";
 
   _message = "";
 
   _contEl;
+
+  constructor(parentElClass) {
+    super();
+    this._parentEl = document.querySelector(parentElClass);
+  }
 
   _generateMarkupSearchResult(result) {
     const id = +window.location.hash.slice(1);
@@ -46,7 +52,7 @@ class SearchResultsView extends View {
     `;
     this._parentEl.insertAdjacentHTML("afterbegin", queueContMarkup);
 
-    return document.querySelector(".search-result-queue");
+    return this._parentEl.querySelector(".search-result-queue");
   }
 
   //~ OVERRIDNG parent View class render()
@@ -79,7 +85,9 @@ class SearchResultsView extends View {
 
     // populating the container el, with the markup
     this._contEl.insertAdjacentHTML("beforeend", markup);
+
+    console.log("HERE IS THE FINAL HTML PARENT ELEMENT:", this._contEl);
   }
 }
 
-export default new SearchResultsView();
+export default SearchResultsView;
