@@ -1,3 +1,19 @@
+@media only screen and (min-width: 1000px) {
+  .logo-img-cont {
+    min-height: 120px !important;
+    max-height: none;
+    min-width: 140px !important;
+    max-width: none;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    /* border: 2px solid red; */
+  }
+  .menu-logo {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 @media only screen and (min-width: 750px) {
   .header {
     display: none;
@@ -16,14 +32,15 @@
 
   /* search side bar */
   .full-screen-menu .search-sidebar {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100%;
     max-width: 400px;
     flex: 1;
-    color: green;
+    /* color: green; */
     overflow: hidden;
-    /* border: 3px solid orange; */
+    /* border-bottom: 4px solid black; */
     background: black;
   }
 
@@ -45,7 +62,8 @@
     position: relative;
     /* border: 3px solid pink; */
     overflow: scroll !important;
-    min-height: 100vh !important;
+    /* extra height is added for better appearance */
+    min-height: 100.035vh !important;
   }
 
   /* bookmarks revealer btn */
@@ -95,12 +113,17 @@
 
   /* search results container */
 
+
+
   .full-screen-menu .search-results-cont-full {
+    margin-top: 1rem;
     /* border: 1px solid blue; */
     width: 100%;
-    min-height: 60vh;
-    max-height: 60vh;
-    overflow: scroll;
+    /* min-height: 60vh;
+    max-height: 60vh; */
+    min-height: 400px;
+    height: auto;
+
     /* border-bottom: 1px solid white; */
   }
 
@@ -112,11 +135,17 @@
 
   /* pagination arrows */
   .full-screen-menu .pagination-full {
+    /* position: absolute;
+    content: "";
+    z-index: 2;
+    bottom: 2%; */
+    align-self: flex-end;
+    justify-self: flex-end !important;
+
     display: block;
     /* justify-content: space-between; ! */
     width: 100%;
-    margin-top: 2vh;
-    /* border: 3px solid blue; */
+    margin-top: auto;
   }
   .pagination-full button {
     /* background: transparent; */
@@ -228,7 +257,6 @@
   /* BUTTONS */
 
   /* bookmarks container */
-  
 
   /* bookmark button */
   .image-display .bookmark-btn {

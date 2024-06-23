@@ -51,7 +51,7 @@ const controlImgResult = async function () {
     // Update the appropriate Views based on display
     if (bookmarksViewFull.getIsRevealed()) {
       bookmarksViewFull.update(model.state.bookmarks);
-    // Update View only if there were ALREADY search results present
+      // Update View only if there were ALREADY search results present
     } else if (model.state.search.results.length !== 0) {
       searchResultsViewFull.render(model.state.search.results);
     }
@@ -95,21 +95,23 @@ const controlSearchResults = async function () {
       searchTopic = searchViewFull.getSearchTopic();
     }
 
-    console.log("before gaurd clause");
-
-    // Gaurd clause
+    // Guard clause
     if (!searchTopic) return;
-
-    console.log("I SHOULDNT BE HERE");
 
     // Loading and rendering search result page
     const initSearchResultsPage = await model.getSearchResultsPage(
       searchTopic,
       1
     );
-    // Gaurd clause
-    if (!initSearchResultsPage) return;
 
+    // Guard clause: If there are no search results, render an error notification
+    if (!initSearchResultsPage) {
+      searchResultsView.renderError();
+      searchResultsViewFull.renderError();
+      return;
+    }
+
+    // Otherwise render the search results
     searchResultsView.render(initSearchResultsPage);
     searchResultsViewFull.render(initSearchResultsPage);
 
@@ -127,7 +129,7 @@ const controlSearchResults = async function () {
  * @returns {Promise<void>} A Promise that resolves when the function completes.
  */
 const controlPagination = async function (goToPage) {
-  // Remove bookmarks container in full screen meny
+  // Remove bookmarks container in full screen menu
   bookmarksViewFull.hideBookmarks();
 
   // Render spinner
@@ -193,7 +195,7 @@ const controlBookmarksVisibility = function () {
   // Get the current status of bookmarks visibility
   const isRevealed = bookmarksViewFull.getIsRevealed();
 
-  // Toggle the status for rendering: true = render, false = dont render
+  // Toggle the status for rendering: true = render, false = don't render
   bookmarksViewFull.toggleIsRevealed();
 
   // Clear the container

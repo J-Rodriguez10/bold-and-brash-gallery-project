@@ -49,7 +49,6 @@ export const updateSearchResults = function (newSearchRes) {
   state.search.results = newSearchRes;
 };
 
-
 export const loadIdObj = async function (searchTopic) {
   try {
     const idObjUrl = `${ID_OBJ_API_URL}${searchTopic}$`;
@@ -155,13 +154,14 @@ const _returnFilteredImgObj = function (imgObj) {
 export const loadNextSearchRes = async function (idObj, currPage) {
   let currI = state.search.indexArr[currPage - 1];
   const searchResProArr = [];
+  let i; // Declare i outside the loop
 
-  console.log("STARTING TO SEARCH !!!");
+  console.log("Loading search results....");
 
-  for (let i = currI; i < idObj.objectIDs.length; i++) {
+  for (i = currI; i < idObj.objectIDs.length; i++) {
     const searchResPro = await loadImgObj(idObj.objectIDs[i]);
 
-    // if search result is null, it didnt pass the check - skip iteration
+    // if search result is null, it didn't pass the check - skip iteration
     if (searchResPro === null) {
       console.log("EITHER ITS NOT PUBLIC DOMAIN OR 404 ERROR");
       console.log("-------------------------");
@@ -183,22 +183,34 @@ export const loadNextSearchRes = async function (idObj, currPage) {
       i === idObj.objectIDs.length - 1
     ) {
       // returning search results
-      console.log("IM ABOUT TO RETURN ARR");
+      console.log("RETURNING SEARCH RESULTS ARR");
 
       // update indexArr
-      state.search.indexArr.push(i);
+      state.search.indexArr.push(i + 1); // Increment i by 1 before pushing
       console.log("Updating index Arr", state.search.indexArr);
 
       // update the amount of ids left - for pagination purposes
-      console.log("BEFORE", state.search.idsLeft);
-      state.search.idsLeft -= i;
-      console.log("THIS IS WHAT YOU LOOKING FORR!!", state.search.idsLeft);
+      state.search.idsLeft -= i + 1;
 
       return Promise.all(
         searchResProArr.map((imgObj) => _returnFilteredImgObj(imgObj))
       );
     }
   }
+
+  // Returning the leftover search results in case we break out of the loop
+  console.log("RETURNING SEARCH RESULTS ARR");
+
+  // Updating index placeholder array
+  state.search.indexArr.push(i); // Push i as is since loop ended
+  console.log("Updating index placeholder array", state.search.indexArr);
+
+  // update the amount of ids left - for pagination purposes
+  state.search.idsLeft -= i;
+
+  return Promise.all(
+    searchResProArr.map((imgObj) => _returnFilteredImgObj(imgObj))
+  );
 };
 
 export const getSearchResultsPage = async function (searchTopic, page) {
@@ -233,16 +245,18 @@ export const getSearchResultsPage = async function (searchTopic, page) {
   }
 };
 
-
-const persistBookmarks= function () {
+const persistBookmarks = function () {
   localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
 };
 
 export const addBookmark = function (imgObj) {
-  console.log("IM SUPPOSEDD TO ADD THIS IMG OBJ TO THE STATE BOOKMARKS", imgObj);
+  console.log(
+    "IM SUPPOSEDD TO ADD THIS IMG OBJ TO THE STATE BOOKMARKS",
+    imgObj
+  );
 
   // gaurd clause
-  if(!imgObj) return;
+  if (!imgObj) return;
 
   // add bookmark
   state.bookmarks.push(imgObj);
@@ -264,11 +278,10 @@ export const deleteBookmark = function (id) {
   persistBookmarks();
 };
 
-const init = function() {
+const init = function () {
   const storage = localStorage.getItem("bookmarks");
   if (storage) state.bookmarks = JSON.parse(storage);
-
-}
+};
 
 init();
 console.log(state.bookmarks);

@@ -113,9 +113,9 @@ Button Styles
   text-align: center;
   text-decoration: none;
   margin: 0;
-  border: 2px outset buttonface; /* The color may vary */
-  background-color: buttonface; /* The color may vary */
-  color: buttontext; /* The color may vary */
+  /* border: 2px outset buttonface; 
+  background-color: buttonface; 
+  color: buttontext; */
   cursor: default;
 }
 
@@ -247,7 +247,8 @@ Navbar
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4.5rem;
+  height: 8%;
+  min-height: 4.5rem;
   padding: 0.5rem 1.5rem;
   background: black;
   z-index: 1;
@@ -333,7 +334,6 @@ Nav toggle Menu
   --top-section-height: calc(100vh - var(--toggle-menu-height));
 } */
 .bookmarks-cont {
-  border: 2px solid orange;
   padding: 0;
   max-height: calc(100vh - var(--header-menu-height));
   min-height: calc(100vh - var(--header-menu-height));
@@ -345,21 +345,17 @@ Nav toggle Menu
 }
 
 .bookmarked-search-results {
-  border: 2px solid red;
   height: auto;
   padding: 0rem;
   max-height: calc(100vh - var(--top-section-height));
-  /* ; */
 }
 
 /* --- bookmarked search result */
 .bookmarked-search-results .search-result {
   border: 1px solid transparent;
-  /* margin: 1px; */
   padding-left: 1rem;
 }
 .bookmarked-search-results .search-result .search-result-preview-info {
-  /* border: 1px solid blue; */
   color: black;
 }
 
@@ -391,7 +387,6 @@ Hero
 }
 
 .hero-info {
-
 }
 
 .hero-p-1 {
@@ -486,13 +481,14 @@ input::placeholder {
   width: 10%;
   height: 47px;
   cursor: pointer;
+
   background: black;
   color: white;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
 }
 
-/* suprise me button */
+/* surprise me button */
 .search-section-input .btn-clear {
   width: 90px;
   font-size: 0.85rem;
@@ -565,7 +561,7 @@ Queue Search Results and Image Display
 /* search results queue --------------------  */
 .search-result-queue {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   overflow: scroll;
@@ -577,9 +573,9 @@ Queue Search Results and Image Display
   cursor: pointer;
   /* border: 1px solid white; */
   width: 100%;
-  min-height: 55px;
-  height: auto;
-  padding: 0.5rem 1rem;
+  min-height: auto;
+  /* height: auto; */
+  padding: 0.75rem 1rem;
   margin: 0;
   /* border: 1px solid white; */
   display: flex;
@@ -896,8 +892,6 @@ Full Screen Image Display
   display: none;
 }
 
-
-
 #practice {
   border: 3px solid red;
   min-height: 10px;
@@ -913,6 +907,5 @@ Full Screen Image Display
 }
 
 input[type="checkbox"]#myCheckbox:checked ~ #practice-2 {
-  display:block;
-
+  display: block;
 }

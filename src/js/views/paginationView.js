@@ -14,7 +14,7 @@ class PaginationView extends View {
       const btn = e.target.closest(".arrow");
       console.log(btn);
 
-      // gaurd clause, to account for not pressing any buttons
+      // Guard clause, to account for not pressing any buttons
       if (!btn) return;
 
       const goToPage = +btn.dataset.goto;
@@ -26,8 +26,8 @@ class PaginationView extends View {
   }
 
   _generateMarkupFull() {
-    const possiblePages = this._data.idsLeft;
-    console.log("ids left", possiblePages);
+    const possibleResultsLeft = this._data.idsLeft;
+    console.log("IDS LEFT: --------------", possibleResultsLeft);
 
     const currPage = this._data.currPage;
 
