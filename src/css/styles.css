@@ -113,9 +113,6 @@ Button Styles
   text-align: center;
   text-decoration: none;
   margin: 0;
-  /* border: 2px outset buttonface; 
-  background-color: buttonface; 
-  color: buttontext; */
   cursor: default;
 }
 
@@ -146,7 +143,7 @@ Button Styles
   border-bottom: 1px solid white;
   cursor: pointer;
   margin-left: 45px;
-  /* width: 160px; */
+
   width: 135px;
   transition: var(--transition);
   font-family: var(--heading-font);
@@ -161,7 +158,7 @@ Button Styles
 .btn-clear:after {
   content: "";
   position: absolute;
-  width: 30%; /* Adjust the size of the squares as needed */
+  width: 30%; 
   height: 55px;
   top: 0;
   bottom: 0;
@@ -235,14 +232,12 @@ Navbar
     rgba(255, 255, 255, 0) 100%
   );
   z-index: -1;
-  /* opacity: 0.4; */
 }
 
 .navbar {
   position: absolute;
   top: 0;
   width: 100%;
-  /* border: 2px solid green; */
   border-bottom: 1px solid white;
   display: flex;
   align-items: center;
@@ -259,7 +254,6 @@ Navbar
 }
 
 .toggle-bars {
-  /* border: 1px solid blue; */
   height: 2rem;
   width: 2rem;
   cursor: pointer;
@@ -283,7 +277,6 @@ Nav toggle Menu
 .nav-toggle-menu-cont {
   position: fixed;
   z-index: 99;
-  /* border: 3px solid green; */
 }
 
 /* add backdrop class to .nav-toggle-menu-cont */
@@ -306,8 +299,6 @@ Nav toggle Menu
   width: 320px;
   background: white;
   z-index: 99;
-  /* border: 3px solid brown; */
-  /* padding: 0 2rem; */
 }
 
 :root {
@@ -330,9 +321,6 @@ Nav toggle Menu
   cursor: pointer;
 }
 
-/* :root {
-  --top-section-height: calc(100vh - var(--toggle-menu-height));
-} */
 .bookmarks-cont {
   padding: 0;
   max-height: calc(100vh - var(--header-menu-height));
@@ -379,10 +367,8 @@ Hero
   justify-content: center;
   align-items: center;
   color: white;
-  /* height: 100vh; */
   padding: 0 2rem;
   margin: auto 0;
-  /* text-align: center; */
   min-height: 600px;
 }
 
@@ -396,7 +382,6 @@ Hero
 .hero h1 {
   font-weight: 600;
   font-size: 3rem;
-  /* border: 1px solid red; */
   margin-bottom: 0;
 }
 
@@ -424,13 +409,11 @@ Search Section
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-startf;
-  /* padding-top: 4.5rem; */
-  /* padding-bottom: 0; */
+  justify-content: flex-start;
   padding: 0 1.5rem;
   height: 100%;
-  /* margin: auto 0; */
 }
+
 .search-section::before {
   content: "";
   width: 100%;
@@ -454,7 +437,6 @@ Search Section
 }
 
 .search-bar-cont {
-  /* border: 1px solid white; */
   width: 100%;
   height: 40px;
   display: flex;
@@ -463,7 +445,6 @@ Search Section
 
 .search-bar-cont input {
   border: transparent;
-  /* width: 160px; */
   width: 90%;
   height: 47px;
   background: whitesmoke;
@@ -508,7 +489,6 @@ input::placeholder {
 /* pagination arrows */
 .pagination {
   display: flex;
-  /* justify-content: space-between; */
   width: 100%;
   margin-top: 2vh;
 }
@@ -521,7 +501,6 @@ input::placeholder {
 .arrow {
   color: white;
   border: 1px solid white !important;
-  /* width: 10px; */
   height: 30px;
   display: flex;
   align-items: center;
@@ -565,24 +544,18 @@ Queue Search Results and Image Display
   display: flex;
   flex-direction: column;
   overflow: scroll;
-  /* display: none; */
-  /* border: 3px solid orange; */
 }
 
 .search-result {
   cursor: pointer;
-  /* border: 1px solid white; */
   width: 100%;
   min-height: auto;
-  /* height: auto; */
   padding: 0.75rem 1rem;
   margin: 0;
-  /* border: 1px solid white; */
   display: flex;
   align-items: center;
   column-gap: 20px;
   transition: var(--transition);
-  /* display: none; */
 }
 
 .search-result:hover,
@@ -634,7 +607,6 @@ Queue Search Results and Image Display
 
 /* search result image --------------------  */
 .search-result-img-cont {
-  /* display: none; */
   position: relative;
   min-width: 100%;
   min-height: 75vh;
@@ -646,7 +618,6 @@ Queue Search Results and Image Display
   position: absolute;
   min-width: 100%;
   min-height: 75vh;
-  /* background-image: url(""); */
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -680,12 +651,8 @@ Queue Search Results and Image Display
   opacity: 0.2;
   transition: var(--transition);
   font-weight: 200;
-  /* display: none; */
 }
 
-/* .image-display .bookmark-btn {
-  border: 3px solid red !important;
-} */
 .bookmark-btn:hover {
   opacity: 1 !important;
 }
@@ -716,7 +683,6 @@ Queue Search Results and Image Display
   opacity: 0.2;
   transition: var(--transition);
   z-index: 1;
-  /* display: none; */
 }
 
 .reveal-info-btn:hover {
@@ -793,7 +759,6 @@ Loading Screen
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: ; */
 }
 
 .search-results-cont .loading-screen {
@@ -801,18 +766,14 @@ Loading Screen
 }
 
 .spinner-cont {
-  /* border: 1px red solid; */
   position: relative;
   /* height: 100%;
   width: 100%; */
 }
 .spinner {
   position: relative;
-  /* border: 3px solid black; */
   border: 2px solid transparent;
-  /* border-top-color: black; */
   border-top: 2px solid white;
-
   height: 130px;
   width: 130px;
   display: flex;
@@ -832,7 +793,6 @@ Loading Screen
 }
 
 .screen-practice {
-  /* border: 5px solid green; */
   height: 400px;
 }
 
@@ -852,7 +812,6 @@ Error Message
 */
 
 .error-cont {
-  /* border: 2px solid blue; */
   min-height: 75vh;
   max-height: 75vh;
   width: 100%;
@@ -890,22 +849,4 @@ Full Screen Image Display
 
 .full-screen-menu {
   display: none;
-}
-
-#practice {
-  border: 3px solid red;
-  min-height: 10px;
-  min-width: 10px;
-  background: orange;
-}
-
-#practice-2 {
-  display: none;
-  height: 25px;
-  width: 100%;
-  background: blue;
-}
-
-input[type="checkbox"]#myCheckbox:checked ~ #practice-2 {
-  display: block;
 }

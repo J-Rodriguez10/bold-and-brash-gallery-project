@@ -6,7 +6,6 @@
     max-width: none;
     margin-top: 1rem;
     margin-left: 3rem;
-    /* border: 2px solid red; */
   }
   .menu-logo {
     width: 100%;
@@ -38,9 +37,7 @@
     min-height: 100%;
     max-width: 400px;
     flex: 1;
-    /* color: green; */
     overflow: hidden;
-    /* border-bottom: 4px solid black; */
     background: black;
   }
 
@@ -60,7 +57,6 @@
 
   .search-sidebar {
     position: relative;
-    /* border: 3px solid pink; */
     overflow: scroll !important;
     /* extra height is added for better appearance */
     min-height: 100.035vh !important;
@@ -69,7 +65,6 @@
   /* bookmarks revealer btn */
   #bookmarks {
     position: absolute;
-    /* border: 2px solid red; */
     width: 2.5rem;
     height: 4rem;
     right: 10%;
@@ -117,47 +112,34 @@
 
   .full-screen-menu .search-results-cont-full {
     margin-top: 1rem;
-    /* border: 1px solid blue; */
     width: 100%;
-    /* min-height: 60vh;
-    max-height: 60vh; */
     min-height: 400px;
     height: auto;
-
-    /* border-bottom: 1px solid white; */
   }
 
   .full-screen-menu .search-result:hover,
   .full-screen-menu .search-result-active {
     transform: translateY(0);
-    /* padding-left: calc(1rem + 3px) !important;  */
   }
 
   /* pagination arrows */
   .full-screen-menu .pagination-full {
-    /* position: absolute;
-    content: "";
-    z-index: 2;
-    bottom: 2%; */
+
     align-self: flex-end;
     justify-self: flex-end !important;
 
     display: block;
-    /* justify-content: space-between; ! */
     width: 100%;
     margin-top: auto;
   }
   .pagination-full button {
-    /* background: transparent; */
     border-color: transparent !important;
     cursor: pointer;
-
-    /* transition: var(--transition); */
   }
+
   .arrow {
     color: white;
     border: 1px solid white !important;
-    /* width: 10px; ! */
     height: 30px;
     display: flex;
     align-items: center;
@@ -174,7 +156,6 @@
     font-size: 0.86rem;
   }
   .pagination-full .left-arr svg {
-    /* border: 1px solid red; */
     font-size: 1.3rem;
   }
 
@@ -183,7 +164,6 @@
     font-size: 1rem;
   }
   .pagination-full .right-arr svg {
-    /* border: 1px solid red; */
     font-size: 2.5rem;
   }
   .pagination-full .arrow:hover {
@@ -200,12 +180,9 @@
 
   /* image display */
   .full-screen-menu .image-display {
-    /* border: 3px solid pink; */
     min-height: 100.3%;
     flex: 2;
     overflow: hidden;
-    /* height: 100px solid blue !important; */
-    /* border: 3px solid orange; */
   }
 
   .image-display {
@@ -241,7 +218,6 @@
   }
 
   .full-screen-menu .img-info-cont {
-    border: 4px solid green;
     text-align: center;
     width: 100%;
     padding-top: 1rem;
@@ -325,9 +301,3 @@
     display: revert;
   }
 }
-
-/*
-4. background image -js 
-5. CONNECT SEARCH VIEW WITH OTHER PARTS
-
-*/
