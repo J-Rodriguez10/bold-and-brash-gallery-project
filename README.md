@@ -11,7 +11,7 @@ Using the **Model View Controller (MVC) architecture** and AJAX, this fully dyna
 
 👉 Here is the documentation for the [public API](https://metmuseum.github.io/) used:
 
-👉 Check Out the Live Demo: Live Demo
+👉 Check Out the [Live Demo](https://j-rodriguez10.github.io/bold-and-brash-gallery-project/)
 
 ## Built With:
 - HTML
