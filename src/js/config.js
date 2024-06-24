@@ -1,14 +1,12 @@
 
 
-// concatinate search term at the end
-
+// concatenate search term at the end
 //^ EXAMPLE: https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=cats
-
 
 export const ID_OBJ_API_URL = `https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=`;
 
 
-// concatinate img id at the end
+// concatenate img id at the end
 export const IMG_OBJ_API_URL = `https://collectionapi.metmuseum.org/public/collection/v1/objects/`;
 
 export const TIMEOUT_SEC = 10;
