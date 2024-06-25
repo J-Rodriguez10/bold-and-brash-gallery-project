@@ -6,7 +6,7 @@ class BookmarksView extends View {
   _isRevealed;
 
   _errMessage =
-    "No bookmarks yet. Add your favorite art work to your bookmarked list";
+    "Welcome, start browsing for your favorite works. Bookmarked pieces will appear here!";
 
   _message = "";
 
