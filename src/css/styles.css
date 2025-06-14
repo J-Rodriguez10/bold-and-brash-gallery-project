@@ -260,6 +260,36 @@ Navbar
   color: white;
 }
 
+
+.git-cont {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.github-icon {
+  font-size: 2rem;
+  margin-left: 1rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.github-icon-full-screen {
+  position: absolute;
+  right: 29%;
+  top: 10%;
+
+  font-size: 1.75rem;
+  margin-left: 1rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.github-icon:hover, .github-icon-full-screen:hover {
+  color: #2ecc71; /* green */
+}
+
+
 .logo {
   height: 3rem;
   width: 3.1rem;
@@ -305,6 +335,7 @@ Nav toggle Menu
   --header-menu-height: 4rem;
 }
 .menu-header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
