@@ -267,7 +267,7 @@ Navbar
   align-items: center;
 }
 
-.github-icon {
+/* .github-icon {
   font-size: 2rem;
   margin-left: 1rem;
   color: #333;
@@ -286,8 +286,8 @@ Navbar
 }
 
 .github-icon:hover, .github-icon-full-screen:hover {
-  color: #2ecc71; /* green */
-}
+  color: #2ecc71; 
+} */
 
 
 .logo {
